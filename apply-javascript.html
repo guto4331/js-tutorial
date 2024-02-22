@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Apply JavaScript example</title>
+    <!-- internal javascript -->
+    <!-- 'DOMContentLoaded' イベントの後に実行される -->
+    <!-- <script>
+      document.addEventListener("DOMContentLoaded", () => {
+      function createParagraph() {
+        const para = document.createElement("p");
+        para.textContent = "ボタンが押されました!";
+        document.body.appendChild(para);
+      }
+
+      const buttons = document.querySelectorAll("button");
+
+      for (const button of buttons) {
+        button.addEventListener("click", createParagraph);
+      }
+    });
+    </script> -->
+    
+    <!-- external javascript -->
+    <!-- 'defer' 属性を用いて HTML 読み込み後に実行できる -->
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <button>Click me</button>
+    <!-- inline javascript (非推奨) -->
+    <!-- <button onclick="createParagraph()">Click me</button> -->
+  </body>
+</html>
