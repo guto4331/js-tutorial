@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Random color example — event handler attribute</title>
+    <title>Random color example — event handler attribute</title>
     <style>
       button {
         margin: 10px
@@ -18,7 +18,13 @@
       function random(number) {
         return Math.floor(Math.random() * (number+1));
       }
-
+      
+      // 'focus': ボタンにフォーカスが当たった時
+      // 'blur': ボタンからフォーカスが外れた時
+      // 'click': ボタンがクリックされた時
+      // 'dblclick': ボタンがダブルクリックされた時
+      // 'mouseover': マウスがボタンに乗った時
+      // 'mouseout': マウスがボタンから離れた時
       btn.addEventListener('click', () => {
         const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
         document.body.style.backgroundColor = rndCol;
