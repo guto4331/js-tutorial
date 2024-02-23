@@ -12,12 +12,16 @@
   </head>
   <body>
     <button>Change color</button>
+    <button class="btnDisable">Disable the button</button>
     <script>
       const btn = document.querySelector('button');
+      const btnDisable = document.querySelector('.btnDisable');
 
       function random(number) {
         return Math.floor(Math.random() * (number+1));
       }
+      
+      const controller = new AbortController();
       
       // 'focus': ボタンにフォーカスが当たった時
       // 'blur': ボタンからフォーカスが外れた時
@@ -25,9 +29,17 @@
       // 'dblclick': ボタンがダブルクリックされた時
       // 'mouseover': マウスがボタンに乗った時
       // 'mouseout': マウスがボタンから離れた時
-      btn.addEventListener('click', () => {
-        const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
-        document.body.style.backgroundColor = rndCol;
+      btn.addEventListener('click',
+        () => {
+          const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+          document.body.style.backgroundColor = rndCol;
+        },
+        { signal: controller.signal }
+      );
+      
+      // ボタンを無効化する（removeEventListener で行うことも可能）
+      btnDisable.addEventListener('click', () => {
+        controller.abort();
       });
     </script>
   </body>
