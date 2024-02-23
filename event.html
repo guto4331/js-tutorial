@@ -14,6 +14,9 @@
     <button>Change color</button>
     <button id="btnColorChange">Change button color</button>
     <button id="btnDisable">Disable the button</button>
+    
+    <input type="text" />
+    <div></div>
     <script>
       const btn = document.querySelector('button');
       const btnColorChange = document.querySelector('#btnColorChange');
@@ -50,6 +53,12 @@
       // ボタンを無効化する（removeEventListener で行うことも可能）
       btnDisable.addEventListener('click', () => {
         controller.abort();
+      });
+      
+      const input = document.querySelector('input');
+      const output = document.querySelector('div');
+      input.addEventListener('keydown', (e) => {
+        output.textContent = `${e.key} が押されました。`;
       });
     </script>
   </body>
