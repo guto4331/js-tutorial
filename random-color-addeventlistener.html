@@ -12,9 +12,11 @@
   </head>
   <body>
     <button>Change color</button>
+    <button class="btnColorChange">Change button color</button>
     <button class="btnDisable">Disable the button</button>
     <script>
       const btn = document.querySelector('button');
+      const btnColorChange = document.querySelector('.btnColorChange');
       const btnDisable = document.querySelector('.btnDisable');
 
       function random(number) {
@@ -37,6 +39,13 @@
         { signal: controller.signal }
       );
       // btn.onclick = () => { ... } とすることも可能
+      
+      function changeColor(e) {
+        const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+        e.target.style.backgroundColor = rndCol;
+      }
+      
+      btnColorChange.addEventListener('click', changeColor, { signal: controller.signal });
       
       // ボタンを無効化する（removeEventListener で行うことも可能）
       btnDisable.addEventListener('click', () => {
