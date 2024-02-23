@@ -12,12 +12,12 @@
   </head>
   <body>
     <button>Change color</button>
-    <button class="btnColorChange">Change button color</button>
-    <button class="btnDisable">Disable the button</button>
+    <button id="btnColorChange">Change button color</button>
+    <button id="btnDisable">Disable the button</button>
     <script>
       const btn = document.querySelector('button');
-      const btnColorChange = document.querySelector('.btnColorChange');
-      const btnDisable = document.querySelector('.btnDisable');
+      const btnColorChange = document.querySelector('#btnColorChange');
+      const btnDisable = document.querySelector('#btnDisable');
 
       function random(number) {
         return Math.floor(Math.random() * (number+1));
