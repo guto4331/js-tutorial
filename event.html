@@ -16,7 +16,21 @@
     <button id="btnDisable">Disable the button</button>
     
     <input type="text" />
-    <div></div>
+    <p></p>
+    
+    <form>
+      <div>
+        <label for="fname">姓：</label>
+        <input id="fname" type="text" />
+      </div>
+      <div>
+        <label for="lname">名：</label>
+        <input id="lname" type="text" />
+      </div>
+      <input id="submit" type="submit">
+    </form>
+    <p id="nameError"></p>
+    
     <script>
       const btn = document.querySelector('button');
       const btnColorChange = document.querySelector('#btnColorChange');
@@ -55,10 +69,23 @@
         controller.abort();
       });
       
+      
       const input = document.querySelector('input');
-      const output = document.querySelector('div');
+      const output = document.querySelector('p');
       input.addEventListener('keydown', (e) => {
         output.textContent = `${e.key} が押されました。`;
+      });
+      
+      
+      const form = document.querySelector('form');
+      const fname = document.querySelector('#fname');
+      const lname = document.querySelector('#lname');
+      const para = document.querySelector('#nameError');
+      form.addEventListener('submit', (e) => {
+        if (fname.value === '' || lname.value === '') {
+          e.preventDefault();
+          para.textContent = '名前を入力してください。';
+        }
       });
     </script>
   </body>
