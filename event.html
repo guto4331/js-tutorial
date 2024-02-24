@@ -31,6 +31,10 @@
     </form>
     <p id="nameError"></p>
     
+    <div id="container">
+      <button id="containerButton">Click!</button>
+    </div>
+    <pre id="showClickedElement"></pre>
     <script>
       const btn = document.querySelector('button');
       const btnColorChange = document.querySelector('#btnColorChange');
@@ -87,6 +91,16 @@
           para.textContent = '名前を入力してください。';
         }
       });
+      
+      const showClickedElement = document.querySelector('#showClickedElement');
+      function detectClickedElement(e){
+        showClickedElement.textContent += `クリックされた要素: ${e.currentTarget.tagName} \n`;
+      }
+      const container = document.querySelector('#container');
+      const button = document.querySelector('#containerButton');
+      document.body.addEventListener('click', detectClickedElement);
+      container.addEventListener('click', detectClickedElement);
+      button.addEventListener('click', detectClickedElement);
     </script>
   </body>
 </html>
