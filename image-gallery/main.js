@@ -16,6 +16,7 @@ for(i = 0; i < images.length; i++){
 
 thumbBar.addEventListener('click', (e) => {
     displayedImage.setAttribute('src', e.target.getAttribute('src'));
+    displayedImage.setAttribute('alt', e.target.getAttribute('alt'));
 });
 
 btn.addEventListener('click', () => {
