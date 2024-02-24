@@ -14,6 +14,10 @@ for(i = 0; i < images.length; i++){
     thumbBar.appendChild(newImage);
 }
 
+thumbBar.addEventListener('click', (e) => {
+    displayedImage.setAttribute('src', e.target.getAttribute('src'));
+});
+
 btn.addEventListener('click', () => {
     if(btn.classList.contains('dark')){
         btn.classList.remove('dark');
