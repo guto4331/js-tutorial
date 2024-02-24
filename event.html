@@ -95,7 +95,8 @@
       const showClickedElement = document.querySelector('#showClickedElement');
       function detectClickedElement(e){
         // 親要素への伝播を止める
-        e.stopPropagation();
+        // e.stopPropagation();
+        // e.currentTarget は e.target と異なり、イベントリスナーが登録された要素を返す
         showClickedElement.textContent += `クリックされた要素: ${e.currentTarget.tagName} \n`;
       }
       const container = document.querySelector('#container');
