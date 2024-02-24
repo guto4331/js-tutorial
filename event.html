@@ -100,6 +100,7 @@
       }
       const container = document.querySelector('#container');
       const button = document.querySelector('#containerButton');
+      // { capture: true } を指定すると、親から子の順番でイベントが発生する
       document.body.addEventListener('click', detectClickedElement);
       container.addEventListener('click', detectClickedElement);
       button.addEventListener('click', detectClickedElement);
