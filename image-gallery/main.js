@@ -20,7 +20,7 @@ thumbBar.addEventListener('click', (e) => {
 });
 
 btn.addEventListener('click', () => {
-    if(btn.classList.contains('dark')){
+    if(btn.getAttribute('class') === 'dark'){
         btn.classList.remove('dark');
         btn.textContent = 'Lighten';
         overlay.style.backgroundColor = 'rgba(0,0,0,0.5)';
