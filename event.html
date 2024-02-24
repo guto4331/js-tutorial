@@ -94,6 +94,8 @@
       
       const showClickedElement = document.querySelector('#showClickedElement');
       function detectClickedElement(e){
+        // 親要素への伝播を止める
+        e.stopPropagation();
         showClickedElement.textContent += `クリックされた要素: ${e.currentTarget.tagName} \n`;
       }
       const container = document.querySelector('#container');
